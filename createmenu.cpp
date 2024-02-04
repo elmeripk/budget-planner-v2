@@ -53,7 +53,7 @@ bool MainWindow::create_file_browser()
 void MainWindow::get_current_date(QLabel* text)
 {
     // Get the current_time since EPOC
-    time_t CURRENT_TIME = time(nullptr);
+    const time_t CURRENT_TIME = time(nullptr);
     //Localtime takes a pointer to CURRENT_TIME
     struct tm* timeinfo = localtime(&CURRENT_TIME);
     //Get the current hour from the struct returned by localtime
@@ -66,7 +66,7 @@ void MainWindow::print_greeting(int current_hour,QLabel* welcome_label)
 {
 
     QString time_of_day = "";
-    std::string user = "Elmeri";
+    std::string user = "Test User";
 
     if (current_hour >= 6 && current_hour < 9) {
         time_of_day = "morning";
